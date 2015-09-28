@@ -1,21 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchOS_2_0_Watch_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="Animations" id="8Ve-Ah-6dV">
+                            <connections>
+                                <segue destination="Pb2-5H-i9H" kind="push" id="lXO-W7-2AH"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="347"/>
+            <point key="canvasLocation" x="110" y="364"/>
+        </scene>
+        <!--Row Animation Interface Controller-->
+        <scene sceneID="ySq-S0-rN3">
+            <objects>
+                <controller hidesWhenLoading="NO" id="8gK-3v-Cvb" customClass="RowAnimationInterfaceController" customModule="WatchOS_2_0_Watch_App_Extension">
+                    <items>
+                        <group width="134" alignment="left" id="wUA-9x-bnI">
+                            <items>
+                                <group alignment="left" id="wCv-RJ-VRk">
+                                    <items>
+                                        <imageView width="36" height="36" alignment="left" verticalAlignment="center" image="Near Me Filled" id="jcH-eG-tCR"/>
+                                    </items>
+                                </group>
+                                <group width="94" alignment="left" id="mGL-Qp-51X"/>
+                                <label alignment="left" verticalAlignment="center" text="New Event" id="aYO-1b-Of5"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="imageNearMe" destination="jcH-eG-tCR" id="vq6-Iz-XKt"/>
+                        <outlet property="spacerGroup" destination="mGL-Qp-51X" id="MaN-3Q-uIG"/>
+                        <outlet property="textLabel" destination="aYO-1b-Of5" id="i0Q-z2-i0I"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="575" y="364"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="9ye-Xc-pp7">
+            <objects>
+                <controller hidesWhenLoading="NO" id="Pb2-5H-i9H">
+                    <items>
+                        <button width="1" alignment="left" title="Row Animation" id="yi6-LT-DdR">
+                            <connections>
+                                <segue destination="8gK-3v-Cvb" kind="push" id="9j0-Tg-NVI"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="307" y="364"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModuleProvider="target">
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="WatchOS_2_0_Watch_App" customModuleProvider="target">
                     <items>
                         <group alignment="left" id="t8f-Gd-c4y"/>
                         <group alignment="left" id="uCw-4Q-Ouw"/>
@@ -44,7 +93,7 @@
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="WatchOS_2_0_Watch_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>
         </scene>
