@@ -18,7 +18,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="110" y="364"/>
+            <point key="canvasLocation" x="0.0" y="364"/>
         </scene>
         <!--Row Animation Interface Controller-->
         <scene sceneID="ySq-S0-rN3">
@@ -44,7 +44,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="594" y="150"/>
+            <point key="canvasLocation" x="594" y="57"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="9ye-Xc-pp7">
@@ -61,10 +61,15 @@
                                 <segue destination="6vk-GL-tnG" kind="push" id="28B-gz-XTx"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="&quot;Tap for more&quot; Animation" id="G1c-8R-o19">
+                            <connections>
+                                <segue destination="clR-qd-4Ri" kind="push" id="hgJ-eD-rzz"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="340" y="364"/>
+            <point key="canvasLocation" x="181" y="364"/>
         </scene>
         <!--Bubble Animation Interface Controller-->
         <scene sceneID="yFi-Df-87i">
@@ -102,7 +107,43 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="594" y="373.75"/>
+            <point key="canvasLocation" x="594" y="303"/>
+        </scene>
+        <!--Tap For More Animation Interface Controller-->
+        <scene sceneID="2Px-aw-CqJ">
+            <objects>
+                <controller hidesWhenLoading="NO" id="clR-qd-4Ri" customClass="TapForMoreAnimationInterfaceController" customModule="WatchOS_2_0_Watch_App_Extension">
+                    <items>
+                        <table alignment="left" id="7Tp-YI-UUJ">
+                            <items>
+                                <tableRow identifier="DescriptionRow" id="Xht-g6-ELZ" customClass="TapForMoreDescriptionRow" customModule="WatchOS_2_0_Watch_App_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="YuL-lX-iAk">
+                                        <items>
+                                            <label alignment="left" text="Short Description" numberOfLines="2" id="WBS-Al-MT8"/>
+                                            <label width="92" alignment="left" text="Tap for more..." id="zDe-2B-D9L">
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                            <label alignment="left" text="Full Description" numberOfLines="0" id="ZBx-79-LgD"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="fullDescriptionLabel" destination="ZBx-79-LgD" id="ln2-xo-sLC"/>
+                                        <outlet property="moreLabel" destination="zDe-2B-D9L" id="Paf-dY-2gH"/>
+                                        <outlet property="shortDescriptionLabel" destination="WBS-Al-MT8" id="nvM-Ww-P0x"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="Action 1" id="SbP-nw-deg"/>
+                        <button width="1" alignment="left" title="Action 2" id="728-HH-b0W"/>
+                    </items>
+                    <connections>
+                        <outlet property="descriptionTable" destination="7Tp-YI-UUJ" id="t7K-ah-b55"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="594" y="539"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
