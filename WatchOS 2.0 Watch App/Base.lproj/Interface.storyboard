@@ -71,26 +71,38 @@
             <objects>
                 <controller hidesWhenLoading="NO" id="6vk-GL-tnG" customClass="BubbleAnimationInterfaceController" customModule="WatchOS_2_0_Watch_App_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" id="h5D-46-xFB">
+                        <group width="1" alignment="left" layout="vertical" id="h5D-46-xFB">
                             <items>
                                 <group alignment="right" verticalAlignment="bottom" id="g7t-Ix-J8R">
                                     <items>
                                         <label alignment="left" verticalAlignment="center" text="Text Bubble" numberOfLines="0" id="3sJ-QG-BLF"/>
                                     </items>
                                 </group>
-                                <button width="1" alignment="left" verticalAlignment="bottom" title="Confirm" id="7Qg-Qf-Cc1"/>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Confirm" id="7Qg-Qf-Cc1">
+                                    <connections>
+                                        <action selector="confirm" destination="6vk-GL-tnG" id="hyC-TC-VGC"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="8bR-b0-mAy">
+                            <items>
+                                <imageView alignment="center" verticalAlignment="center" id="VC8-bQ-K8c"/>
+                                <label alignment="center" verticalAlignment="center" text="Success!" id="JRD-BM-NI2"/>
                             </items>
                         </group>
                     </items>
                     <connections>
                         <outlet property="bubble" destination="g7t-Ix-J8R" id="Q3u-0e-qEJ"/>
                         <outlet property="confirmationButton" destination="7Qg-Qf-Cc1" id="1Mj-nZ-R4x"/>
+                        <outlet property="confirmationContainer" destination="8bR-b0-mAy" id="OAc-uw-RQz"/>
+                        <outlet property="successInterfaceImage" destination="VC8-bQ-K8c" id="afB-Jt-ejW"/>
                         <outlet property="textBubble" destination="3sJ-QG-BLF" id="M0H-nV-w2k"/>
                         <outlet property="textContainer" destination="h5D-46-xFB" id="Qm4-gd-jii"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="594" y="364"/>
+            <point key="canvasLocation" x="594" y="373.75"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">

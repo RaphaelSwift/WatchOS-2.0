@@ -16,8 +16,10 @@ class BubbleAnimationInterfaceController: WKInterfaceController {
     @IBOutlet var confirmationButton: WKInterfaceButton!
     @IBOutlet var textContainer: WKInterfaceGroup!
     
+    @IBOutlet var confirmationContainer: WKInterfaceGroup!
     @IBOutlet var bubble: WKInterfaceGroup!
     
+    @IBOutlet var successInterfaceImage: WKInterfaceImage!
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
@@ -30,7 +32,14 @@ class BubbleAnimationInterfaceController: WKInterfaceController {
         
         textBubble.setText("This is the text displayed in the text bubble")
         
+        textContainer.setRelativeHeight(1.0, withAdjustment: 0)
+        
         confirmationButton.setAlpha(0.0)
+        
+        confirmationContainer.setHeight(0)
+        confirmationContainer.setAlpha(0.0)
+        
+        successInterfaceImage.setImage(UIImage(named: "Success"))
     }
     
 
@@ -52,6 +61,14 @@ class BubbleAnimationInterfaceController: WKInterfaceController {
             
             // causes the text bubble and confirmation button to move upward
             self.textContainer.sizeToFitHeight()
+        }
+    }
+
+    @IBAction func confirm() {
+        animateWithDuration(0.5) { () -> Void in
+            self.textContainer.setHeight(0)
+            self.confirmationContainer.setAlpha(1.0)
+            self.confirmationContainer.setRelativeHeight(1.0, withAdjustment: 0)
         }
     }
 
