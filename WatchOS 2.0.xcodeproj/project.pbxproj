@@ -25,6 +25,7 @@
 		F6863BC61BB91A8200820EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6863BC51BB91A8200820EAB /* Assets.xcassets */; };
 		F6863BCA1BB91A8200820EAB /* WatchOS 2.0 Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F6863BA81BB91A8200820EAB /* WatchOS 2.0 Watch App.app */; };
 		F6863BD41BB920D800820EAB /* RowAnimationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6863BD31BB920D800820EAB /* RowAnimationInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
+		F6C856C71BB9316E0039681A /* BubbleAnimationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C856C61BB9316E0039681A /* BubbleAnimationInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		F6863BC51BB91A8200820EAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6863BC71BB91A8200820EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6863BD31BB920D800820EAB /* RowAnimationInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowAnimationInterfaceController.swift; sourceTree = "<group>"; };
+		F6C856C61BB9316E0039681A /* BubbleAnimationInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleAnimationInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 			children = (
 				F6863BBB1BB91A8200820EAB /* InterfaceController.swift */,
 				F6863BD31BB920D800820EAB /* RowAnimationInterfaceController.swift */,
+				F6C856C61BB9316E0039681A /* BubbleAnimationInterfaceController.swift */,
 				F6863BBD1BB91A8200820EAB /* ExtensionDelegate.swift */,
 				F6863BBF1BB91A8200820EAB /* NotificationController.swift */,
 				F6863BC11BB91A8200820EAB /* GlanceController.swift */,
@@ -453,6 +456,7 @@
 				F6863BC01BB91A8200820EAB /* NotificationController.swift in Sources */,
 				F6863BBE1BB91A8200820EAB /* ExtensionDelegate.swift in Sources */,
 				F6863BC41BB91A8200820EAB /* ComplicationController.swift in Sources */,
+				F6C856C71BB9316E0039681A /* BubbleAnimationInterfaceController.swift in Sources */,
 				F6863BBC1BB91A8200820EAB /* InterfaceController.swift in Sources */,
 				F6863BD41BB920D800820EAB /* RowAnimationInterfaceController.swift in Sources */,
 				F6863BC21BB91A8200820EAB /* GlanceController.swift in Sources */,
@@ -746,6 +750,7 @@
 				F6863B9F1BB919DC00820EAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6863BA01BB919DC00820EAB /* Build configuration list for PBXNativeTarget "WatchOS 2.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -754,6 +759,7 @@
 				F6863BA21BB919DC00820EAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6863BA31BB919DC00820EAB /* Build configuration list for PBXNativeTarget "WatchOS 2.0UITests" */ = {
 			isa = XCConfigurationList;
@@ -762,6 +768,7 @@
 				F6863BA51BB919DC00820EAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6863BCB1BB91A8200820EAB /* Build configuration list for PBXNativeTarget "WatchOS 2.0 Watch App Extension" */ = {
 			isa = XCConfigurationList;
@@ -770,6 +777,7 @@
 				F6863BCD1BB91A8200820EAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6863BCF1BB91A8200820EAB /* Build configuration list for PBXNativeTarget "WatchOS 2.0 Watch App" */ = {
 			isa = XCConfigurationList;
@@ -778,6 +786,7 @@
 				F6863BD11BB91A8200820EAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

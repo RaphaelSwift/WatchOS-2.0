@@ -44,7 +44,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="575" y="364"/>
+            <point key="canvasLocation" x="594" y="150"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="9ye-Xc-pp7">
@@ -56,10 +56,36 @@
                                 <segue destination="8gK-3v-Cvb" kind="push" id="9j0-Tg-NVI"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Text Bubble Animation" id="7SV-NA-Jan">
+                            <connections>
+                                <segue destination="6vk-GL-tnG" kind="push" id="28B-gz-XTx"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="307" y="364"/>
+            <point key="canvasLocation" x="340" y="364"/>
+        </scene>
+        <!--Bubble Animation Interface Controller-->
+        <scene sceneID="yFi-Df-87i">
+            <objects>
+                <controller hidesWhenLoading="NO" id="6vk-GL-tnG" customClass="BubbleAnimationInterfaceController" customModule="WatchOS_2_0_Watch_App_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="h5D-46-xFB">
+                            <items>
+                                <label alignment="right" verticalAlignment="bottom" text="Label" numberOfLines="0" id="3sJ-QG-BLF"/>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Confirm" id="7Qg-Qf-Cc1"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="confirmationButton" destination="7Qg-Qf-Cc1" id="1Mj-nZ-R4x"/>
+                        <outlet property="textBubble" destination="3sJ-QG-BLF" id="M0H-nV-w2k"/>
+                        <outlet property="textContainer" destination="h5D-46-xFB" id="Qm4-gd-jii"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="594" y="364"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
@@ -72,7 +98,7 @@
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="235" y="672"/>
+            <point key="canvasLocation" x="110" y="690"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -88,14 +114,14 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="235" y="1001"/>
+            <point key="canvasLocation" x="110" y="1001"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
                 <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="WatchOS_2_0_Watch_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="553" y="1001"/>
+            <point key="canvasLocation" x="340" y="1001"/>
         </scene>
     </scenes>
 </document>
