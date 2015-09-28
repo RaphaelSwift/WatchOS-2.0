@@ -16,12 +16,19 @@ class BubbleAnimationInterfaceController: WKInterfaceController {
     @IBOutlet var confirmationButton: WKInterfaceButton!
     @IBOutlet var textContainer: WKInterfaceGroup!
     
+    @IBOutlet var bubble: WKInterfaceGroup!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
+        
+        bubble.setCornerRadius(15)
+        bubble.setBackgroundColor(UIColor.blueColor())
+        bubble.setContentInset(UIEdgeInsets(top: 2, left: 6, bottom: 2, right: 6))
+        bubble.setAlpha(0.0)
+        bubble.setWidth(0)
+        
         textBubble.setText("This is the text displayed in the text bubble")
-        textBubble.setWidth(0)
-        textBubble.setAlpha(0.0)
         
         confirmationButton.setAlpha(0.0)
     }
@@ -35,13 +42,15 @@ class BubbleAnimationInterfaceController: WKInterfaceController {
     override func didAppear() {
         super.didAppear()
         
-        animateWithDuration(0.3) { () -> Void in
-            self.textBubble.setRelativeWidth(1.0, withAdjustment: 0)
-            self.textBubble.sizeToFitHeight()
-            self.textBubble.setAlpha(1.0)
+        animateWithDuration(0.5) { () -> Void in
             
-            self.confirmationButton.setAlpha(1.0)
+            self.bubble.setRelativeWidth(1.0, withAdjustment: 0) // causes the bubble to expand horizontally
+            self.bubble.sizeToFitHeight() // size of the bubble to fit the content's height
+            self.bubble.setAlpha(1.0) // fades in
             
+            self.confirmationButton.setAlpha(1.0) // fades in
+            
+            // causes the text bubble and confirmation button to move upward
             self.textContainer.sizeToFitHeight()
         }
     }

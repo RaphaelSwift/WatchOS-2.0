@@ -73,12 +73,17 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="h5D-46-xFB">
                             <items>
-                                <label alignment="right" verticalAlignment="bottom" text="Label" numberOfLines="0" id="3sJ-QG-BLF"/>
+                                <group alignment="right" verticalAlignment="bottom" id="g7t-Ix-J8R">
+                                    <items>
+                                        <label alignment="left" verticalAlignment="center" text="Text Bubble" numberOfLines="0" id="3sJ-QG-BLF"/>
+                                    </items>
+                                </group>
                                 <button width="1" alignment="left" verticalAlignment="bottom" title="Confirm" id="7Qg-Qf-Cc1"/>
                             </items>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="bubble" destination="g7t-Ix-J8R" id="Q3u-0e-qEJ"/>
                         <outlet property="confirmationButton" destination="7Qg-Qf-Cc1" id="1Mj-nZ-R4x"/>
                         <outlet property="textBubble" destination="3sJ-QG-BLF" id="M0H-nV-w2k"/>
                         <outlet property="textContainer" destination="h5D-46-xFB" id="Qm4-gd-jii"/>
