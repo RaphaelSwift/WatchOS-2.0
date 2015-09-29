@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6023A7D1BBA858A001153AF /* SequentialAnimationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6023A7C1BBA858A001153AF /* SequentialAnimationInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		F6863B791BB919DC00820EAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6863B781BB919DC00820EAB /* AppDelegate.swift */; };
 		F6863B7B1BB919DC00820EAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6863B7A1BB919DC00820EAB /* ViewController.swift */; };
 		F6863B7E1BB919DC00820EAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6863B7C1BB919DC00820EAB /* Main.storyboard */; };
@@ -87,6 +88,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F6023A7C1BBA858A001153AF /* SequentialAnimationInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequentialAnimationInterfaceController.swift; sourceTree = "<group>"; };
 		F6863B751BB919DC00820EAB /* WatchOS 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchOS 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6863B781BB919DC00820EAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6863B7A1BB919DC00820EAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				F6C856C61BB9316E0039681A /* BubbleAnimationInterfaceController.swift */,
 				F6C856C81BB983AE0039681A /* TapForMoreAnimationInterfaceController.swift */,
 				F6C856CC1BB98A380039681A /* TapForMoreDescriptionRow.swift */,
+				F6023A7C1BBA858A001153AF /* SequentialAnimationInterfaceController.swift */,
 				F6863BBD1BB91A8200820EAB /* ExtensionDelegate.swift */,
 				F6863BBF1BB91A8200820EAB /* NotificationController.swift */,
 				F6863BC11BB91A8200820EAB /* GlanceController.swift */,
@@ -460,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6863BC01BB91A8200820EAB /* NotificationController.swift in Sources */,
+				F6023A7D1BBA858A001153AF /* SequentialAnimationInterfaceController.swift in Sources */,
 				F6863BBE1BB91A8200820EAB /* ExtensionDelegate.swift in Sources */,
 				F6863BC41BB91A8200820EAB /* ComplicationController.swift in Sources */,
 				F6C856C91BB983AE0039681A /* TapForMoreAnimationInterfaceController.swift in Sources */,
