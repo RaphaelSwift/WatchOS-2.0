@@ -192,7 +192,7 @@
                                                 </label>
                                             </items>
                                         </group>
-                                        <group width="24" height="1" alignment="left" layout="vertical" id="9LB-Bf-srY">
+                                        <group width="0.20000000000000001" height="1" alignment="left" layout="vertical" id="9LB-Bf-srY">
                                             <items>
                                                 <group width="19" height="19" alignment="left" id="lPC-5T-lkm">
                                                     <color key="backgroundColor" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
