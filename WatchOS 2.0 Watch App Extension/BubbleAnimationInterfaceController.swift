@@ -20,14 +20,16 @@ class BubbleAnimationInterfaceController: WKInterfaceController {
     @IBOutlet var bubble: WKInterfaceGroup!
     
     @IBOutlet var successInterfaceImage: WKInterfaceImage!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
         
+        bubble.setAlpha(0.0)
         bubble.setCornerRadius(15)
         bubble.setBackgroundColor(UIColor.blueColor())
         bubble.setContentInset(UIEdgeInsets(top: 2, left: 6, bottom: 2, right: 6))
-        bubble.setAlpha(0.0)
+        
         bubble.setWidth(0)
         
         textBubble.setText("This is the text displayed in the text bubble")

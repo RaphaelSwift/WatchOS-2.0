@@ -22,8 +22,7 @@ class SequentialAnimationInterfaceController: WKInterfaceController {
     @IBOutlet var middleCenterGroup: WKInterfaceGroup!
     @IBOutlet var middleRightGroup: WKInterfaceGroup!
 
-    // Square Groups
-    
+    // Outer Groups (Circles)
     @IBOutlet var group1: WKInterfaceGroup!
     @IBOutlet var group2: WKInterfaceGroup!
     @IBOutlet var group3: WKInterfaceGroup!
@@ -37,47 +36,63 @@ class SequentialAnimationInterfaceController: WKInterfaceController {
     @IBOutlet var group11: WKInterfaceGroup!
     @IBOutlet var group12: WKInterfaceGroup!
     
+    // Label
+    @IBOutlet var counterLabel: WKInterfaceLabel!
     
-    var groups = [WKInterfaceGroup]()
+    var counter = Int.random(12)
     
+    private var outerGroups = [WKInterfaceGroup]()
+    
+    //MARK: - Constants
+    
+    private struct Constants {
+        static let groupColor = UIColor.redColor()
+        static let delay: Double = 0.06 // in seconds
+    }
+    
+    
+    //MARK: - LifeCycle
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
-        groups = [group1,group2,group3,group4,group5,group6,group7,group8,group9,group10,group11,group12]
         
-        for group in groups {
-            group.setCornerRadius(8)
-            group.setBackgroundColor(UIColor.redColor())
-            group.setAlpha(0.3)
+        outerGroups = [group1,group2,group3,group4,group5,group6,group7,group8,group9,group10,group11,group12]
+        
+        for group in outerGroups {
+            group.setCornerRadius(10)
+            group.setBackgroundColor(Constants.groupColor)
+            group.setAlpha(0.0)
         }
+        
     }
     
     override func didAppear() {
         super.didAppear()
         
-        for (var i = 0; i < groups.count; i++) {
-            let group = groups[i]
+        for (var i = 0; i < outerGroups.count; i++) {
+            let group = outerGroups[i]
             
-            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC))
+            let delay = Double(i) * Constants.delay * Double(NSEC_PER_SEC)
+            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            
+            let alpha: CGFloat = (i < counter) ? 1.0 : 0.3
+            let counterNumber: Int = (i + 1 < counter) ? i : counter
             
             dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-                self.animateWithDuration(1) { () -> Void in
-                    group.setAlpha(1.0)
+                self.animateWithDuration(0.3) { () -> Void in
+                    group.setAlpha(alpha)
+                    self.counterLabel.setText("\(counterNumber)")
                 }
             }
         }
     }
+}
 
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
+// return a random number between 1 to max
+private extension Int {
+    static func random(max:Int) -> Int{
+        return Int(arc4random() % UInt32(max) + 1)
     }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
-
 }

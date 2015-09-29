@@ -68,7 +68,7 @@
                         </button>
                         <button width="1" alignment="left" title="Sequential Animation" id="HEM-bO-4Xc">
                             <connections>
-                                <segue destination="MQg-63-eWd" kind="push" id="jhb-gz-W7q"/>
+                                <segue destination="MQg-63-eWd" kind="push" id="Q8o-b6-OAu"/>
                             </connections>
                         </button>
                     </items>
@@ -155,17 +155,17 @@
             <objects>
                 <controller hidesWhenLoading="NO" id="MQg-63-eWd" customClass="SequentialAnimationInterfaceController" customModule="WatchOS_2_0_Watch_App_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" id="wrG-FS-l1M">
+                        <group width="132" height="132" alignment="center" verticalAlignment="center" layout="vertical" id="wrG-FS-l1M">
                             <items>
                                 <group width="0.59999999999999998" height="0.20000000000000001" alignment="center" id="rmW-yR-xXE">
                                     <items>
-                                        <group width="20" height="20" alignment="left" verticalAlignment="bottom" id="ES8-Wu-OYe">
+                                        <group width="19" height="19" alignment="left" verticalAlignment="bottom" id="ES8-Wu-OYe">
                                             <color key="backgroundColor" red="0.50196081399917603" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </group>
-                                        <group width="20" height="20" alignment="center" id="gVU-g1-PXT">
+                                        <group width="19" height="19" alignment="center" id="gVU-g1-PXT">
                                             <color key="backgroundColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </group>
-                                        <group width="20" height="20" alignment="right" verticalAlignment="bottom" id="Nux-lw-dLs">
+                                        <group width="19" height="19" alignment="right" verticalAlignment="bottom" id="Nux-lw-dLs">
                                             <color key="backgroundColor" red="0.40000000596046448" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </group>
                                     </items>
@@ -174,31 +174,33 @@
                                     <items>
                                         <group width="0.20000000000000001" height="1" alignment="left" layout="vertical" id="SBc-Xt-6DH">
                                             <items>
-                                                <group width="20" height="20" alignment="right" id="b9O-3i-1iO">
+                                                <group width="19" height="19" alignment="right" id="b9O-3i-1iO">
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                                 </group>
-                                                <group width="20" height="20" alignment="left" verticalAlignment="center" id="cIs-mW-3oV">
+                                                <group width="19" height="19" alignment="left" verticalAlignment="center" id="cIs-mW-3oV">
                                                     <color key="backgroundColor" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                                 </group>
-                                                <group width="20" height="20" alignment="right" verticalAlignment="bottom" id="Ys3-xa-wsu">
+                                                <group width="19" height="19" alignment="right" verticalAlignment="bottom" id="Ys3-xa-wsu">
                                                     <color key="backgroundColor" red="0.25098040699958801" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                                 </group>
                                             </items>
                                         </group>
                                         <group width="0.59999999999999998" height="1" alignment="left" id="umN-x2-Eta">
                                             <items>
-                                                <label alignment="center" verticalAlignment="center" text="1-12" id="Xul-MA-OBe"/>
+                                                <label alignment="center" verticalAlignment="center" text="0" id="Xul-MA-OBe">
+                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                                                </label>
                                             </items>
                                         </group>
-                                        <group width="0.20000000000000001" height="1" alignment="left" layout="vertical" id="9LB-Bf-srY">
+                                        <group width="24" height="1" alignment="left" layout="vertical" id="9LB-Bf-srY">
                                             <items>
-                                                <group width="20" height="20" alignment="left" id="lPC-5T-lkm">
+                                                <group width="19" height="19" alignment="left" id="lPC-5T-lkm">
                                                     <color key="backgroundColor" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                                 </group>
-                                                <group width="20" height="20" alignment="right" verticalAlignment="center" id="y37-4g-vmc">
+                                                <group width="19" height="19" alignment="right" verticalAlignment="center" id="y37-4g-vmc">
                                                     <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </group>
-                                                <group width="20" height="20" alignment="left" verticalAlignment="bottom" id="VhK-th-ZJQ">
+                                                <group width="19" height="19" alignment="left" verticalAlignment="bottom" id="VhK-th-ZJQ">
                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                                 </group>
                                             </items>
@@ -207,13 +209,13 @@
                                 </group>
                                 <group width="0.59999999999999998" height="0.20000000000000001" alignment="center" id="w4o-E8-fdQ">
                                     <items>
-                                        <group width="20" height="20" alignment="left" id="Rqp-2t-DLU">
+                                        <group width="19" height="19" alignment="left" id="Rqp-2t-DLU">
                                             <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </group>
-                                        <group width="20" height="20" alignment="center" verticalAlignment="bottom" id="6ee-Mx-b1k">
+                                        <group width="19" height="19" alignment="center" verticalAlignment="bottom" id="6ee-Mx-b1k">
                                             <color key="backgroundColor" red="0.50196081399917603" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </group>
-                                        <group width="20" height="20" alignment="right" id="eGv-cH-0hw">
+                                        <group width="19" height="19" alignment="right" id="eGv-cH-0hw">
                                             <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                                         </group>
                                     </items>
@@ -223,6 +225,7 @@
                     </items>
                     <connections>
                         <outlet property="bottomGroup" destination="w4o-E8-fdQ" id="aG6-Z2-pt4"/>
+                        <outlet property="counterLabel" destination="Xul-MA-OBe" id="lcd-6N-SRV"/>
                         <outlet property="group1" destination="gVU-g1-PXT" id="rvx-lb-ECF"/>
                         <outlet property="group10" destination="cIs-mW-3oV" id="Ldp-dP-HJY"/>
                         <outlet property="group11" destination="b9O-3i-1iO" id="IUc-Tw-6jH"/>
@@ -243,7 +246,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="594" y="798"/>
+            <point key="canvasLocation" x="594" y="755"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">

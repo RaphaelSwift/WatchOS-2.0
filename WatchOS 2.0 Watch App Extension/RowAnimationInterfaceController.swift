@@ -19,10 +19,9 @@ class RowAnimationInterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        imageNearMe.setImage(UIImage(named: "Near Me Filled"))
         imageNearMe.setAlpha(0.0)
         textLabel.setAlpha(0.0)
-        // Configure interface objects here.
+        imageNearMe.setImage(UIImage(named: "Near Me Filled"))
     }
 
     override func willActivate() {
