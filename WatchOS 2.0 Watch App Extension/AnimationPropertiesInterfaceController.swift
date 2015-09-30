@@ -17,26 +17,12 @@ class AnimationPropertiesInterfaceController: WKInterfaceController {
     @IBOutlet var innerGroup: WKInterfaceGroup!
     @IBOutlet var animationLabel: WKInterfaceLabel!
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
-        
-        // Configure interface objects here.
-    }
-
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
+    var timer = NSTimer()
     
     override func didAppear() {
         super.didAppear()
         
-        let timer = NSTimer.scheduledTimerWithTimeInterval(8.0, target: self, selector: "animationLoop", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(8.0, target: self, selector: "animationLoop", userInfo: nil, repeats: true)
         timer.fire()
     }
     
@@ -50,6 +36,12 @@ class AnimationPropertiesInterfaceController: WKInterfaceController {
         let _ = NSTimer.scheduledTimerWithTimeInterval(6.0, target: self, selector: "animateBackToOriginalStatus", userInfo: nil, repeats: false)
     }
     
+    
+    override func didDeactivate() {
+        super.didDeactivate()
+        timer.invalidate()
+    }
+    
     func animateColor() {
         animateWithDuration(2.0) { () -> Void in
             self.innerGroup.setBackgroundColor(UIColor.blackColor())
@@ -57,7 +49,6 @@ class AnimationPropertiesInterfaceController: WKInterfaceController {
             self.animationLabel.setText("Color")
         }
     }
-    
     
     func animateAlignement() {
         animateWithDuration(2.0) { () -> Void in

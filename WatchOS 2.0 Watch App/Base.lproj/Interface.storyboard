@@ -263,7 +263,7 @@
             <objects>
                 <controller hidesWhenLoading="NO" id="c0A-hv-ski" customClass="AnimatedImageInterfaceController" customModule="WatchOS_2_0_Watch_App_Extension">
                     <items>
-                        <imageView width="100" height="100" alignment="center" verticalAlignment="center" image="animation" id="cqF-j4-hRO"/>
+                        <imageView width="100" height="100" alignment="center" verticalAlignment="center" id="cqF-j4-hRO"/>
                     </items>
                     <connections>
                         <outlet property="animatedImage" destination="cqF-j4-hRO" id="ZVT-9R-5su"/>
