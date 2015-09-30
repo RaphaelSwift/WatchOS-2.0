@@ -44,7 +44,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="594" y="57"/>
+            <point key="canvasLocation" x="435" y="23"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="9ye-Xc-pp7">
@@ -71,10 +71,15 @@
                                 <segue destination="MQg-63-eWd" kind="push" id="Q8o-b6-OAu"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Animated Image" id="z4F-ew-LJN">
+                            <connections>
+                                <segue destination="c0A-hv-ski" kind="push" id="seU-WR-7r3"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="181" y="364"/>
+            <point key="canvasLocation" x="203" y="363.25"/>
         </scene>
         <!--Bubble Animation Interface Controller-->
         <scene sceneID="yFi-Df-87i">
@@ -112,7 +117,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="594" y="303"/>
+            <point key="canvasLocation" x="594" y="23"/>
         </scene>
         <!--Tap For More Animation Interface Controller-->
         <scene sceneID="2Px-aw-CqJ">
@@ -148,7 +153,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="594" y="539"/>
+            <point key="canvasLocation" x="754" y="23"/>
         </scene>
         <!--Sequential Animation Interface Controller-->
         <scene sceneID="0B2-Lj-YIM">
@@ -246,7 +251,21 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="594" y="755"/>
+            <point key="canvasLocation" x="435" y="631"/>
+        </scene>
+        <!--Animated Image Interface Controller-->
+        <scene sceneID="2oR-pe-uPH">
+            <objects>
+                <controller hidesWhenLoading="NO" id="c0A-hv-ski" customClass="AnimatedImageInterfaceController" customModule="WatchOS_2_0_Watch_App_Extension">
+                    <items>
+                        <imageView width="100" height="100" alignment="center" verticalAlignment="center" image="animation" id="cqF-j4-hRO"/>
+                    </items>
+                    <connections>
+                        <outlet property="animatedImage" destination="cqF-j4-hRO" id="ZVT-9R-5su"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="594" y="631"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
@@ -259,7 +278,7 @@
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="110" y="690"/>
+            <point key="canvasLocation" x="0.0" y="823"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -275,14 +294,14 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="110" y="1001"/>
+            <point key="canvasLocation" x="0.0" y="1124"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
                 <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="WatchOS_2_0_Watch_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="340" y="1001"/>
+            <point key="canvasLocation" x="181" y="1124"/>
         </scene>
     </scenes>
 </document>
