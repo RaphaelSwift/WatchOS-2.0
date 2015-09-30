@@ -76,6 +76,11 @@
                                 <segue destination="c0A-hv-ski" kind="push" id="seU-WR-7r3"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Animation Properties" id="2TY-1r-LWO">
+                            <connections>
+                                <segue destination="gJD-0F-jI1" kind="push" id="hBb-mC-5xz"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
@@ -267,6 +272,30 @@
             </objects>
             <point key="canvasLocation" x="594" y="631"/>
         </scene>
+        <!--Animation Properties Interface Controller-->
+        <scene sceneID="MtM-aq-FPp">
+            <objects>
+                <controller hidesWhenLoading="NO" id="gJD-0F-jI1" customClass="AnimationPropertiesInterfaceController" customModule="WatchOS_2_0_Watch_App_Extension">
+                    <items>
+                        <label alignment="center" text="Animation" id="f6n-OC-Ggo"/>
+                        <group width="100" height="100" alignment="center" verticalAlignment="center" alpha="0.5" id="S3d-04-N0d">
+                            <items>
+                                <group width="0.5" height="0.5" alignment="center" verticalAlignment="center" id="hId-Dl-9BL">
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </group>
+                            </items>
+                            <color key="backgroundColor" red="0.0" green="0.25098040699958801" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="animationLabel" destination="f6n-OC-Ggo" id="p8Y-Hs-fwa"/>
+                        <outlet property="innerGroup" destination="hId-Dl-9BL" id="Tvh-4x-K8P"/>
+                        <outlet property="outerGroup" destination="S3d-04-N0d" id="oAE-h9-dJi"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="754" y="631"/>
+        </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
@@ -278,7 +307,7 @@
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="0.0" y="823"/>
+            <point key="canvasLocation" x="0.0" y="886"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
