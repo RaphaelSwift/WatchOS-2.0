@@ -35,13 +35,31 @@
                                 <segue destination="n62-T4-2zs" kind="push" id="x3s-am-Ejb"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Stack" id="Vzd-C4-lII"/>
+                        <button width="1" alignment="left" title="Stack" id="Vzd-C4-lII">
+                            <connections>
+                                <segue destination="TE3-vV-xcw" kind="push" id="9PU-8I-QXL"/>
+                            </connections>
+                        </button>
                         <button width="1" alignment="left" title="Sequence" id="OYq-3o-xfK"/>
                         <button width="1" alignment="left" title="Coordination" id="7tk-Kp-ib6"/>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="202" y="582.5"/>
+            <point key="canvasLocation" x="173" y="595.5"/>
+        </scene>
+        <!--Stack Picker Interface Controller-->
+        <scene sceneID="4RY-aQ-iys">
+            <objects>
+                <controller hidesWhenLoading="NO" id="TE3-vV-xcw" customClass="StackPickerInterfaceController" customModule="WatchOS_2_0_Watch_App_Extension">
+                    <items>
+                        <picker width="1" height="100" alignment="center" verticalAlignment="center" style="stack" indicatorMode="shownWhileFocused" id="pPi-fA-Ht4"/>
+                    </items>
+                    <connections>
+                        <outlet property="stackPicker" destination="pPi-fA-Ht4" id="naM-A0-6Em"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="420" y="739"/>
         </scene>
         <!--List Picker Interface Controller-->
         <scene sceneID="hEX-f4-4jB">

@@ -59,7 +59,7 @@ class ListPickerInterfaceController: WKInterfaceController {
     }
 }
 
-private extension UIColor {
+extension UIColor {
     class var random: UIColor {
         switch arc4random() % 8 {
         case 0: return UIColor.blueColor()
