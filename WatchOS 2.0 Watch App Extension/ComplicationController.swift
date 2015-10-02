@@ -56,8 +56,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Placeholder Templates
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
-        // This method will be called once per supported complication, and the results will be cached
-        handler(nil)
+        
+        let tmpl = CLKComplicationTemplateModularLargeStandardBody()
+        tmpl.headerImageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Tennis")!)
+    
+        tmpl.headerTextProvider = CLKSimpleTextProvider(text: "Match Schedule")
+        tmpl.body1TextProvider = CLKSimpleTextProvider(text: "Player vs Player")
+        
+        handler(tmpl)
     }
     
 }
