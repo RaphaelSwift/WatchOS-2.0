@@ -8,6 +8,7 @@
 
 import ClockKit
 
+let MatchDuration = NSTimeInterval(60 * 45)
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
@@ -18,11 +19,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-        handler(nil)
+        let startDate = timelineEntryDateForMatch(TennisMatch.sharedInstance().firstMatch())
+        handler(startDate)
     }
     
     func getTimelineEndDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-        handler(nil)
+        let endDate = TennisMatch.sharedInstance().lastMatch().time.dateByAddingTimeInterval(MatchDuration)
+        handler(endDate)
     }
     
     func getPrivacyBehaviorForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationPrivacyBehavior) -> Void) {
@@ -32,18 +35,49 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
-        // Call the handler with the current timeline entry
-        handler(nil)
+        
+        getTimelineEntriesForComplication(complication, beforeDate: NSDate(), limit: 1) { (entries) -> Void in
+            handler(entries?.first)
+        }
+
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
-        // Call the handler with the timeline entries prior to the given date
-        handler(nil)
+        // Call the handler with the timeline entries after to the given date
+        
+        var entries = [CLKComplicationTimelineEntry]()
+        
+        var match: Match? = TennisMatch.sharedInstance().lastMatch()
+        while let thisMatch = match {
+            let thisEntryDate = timelineEntryDateForMatch(thisMatch)
+            if date.compare(thisEntryDate) == .OrderedDescending {
+                let tmpl = templateForMatch(thisMatch)
+                let entry = CLKComplicationTimelineEntry(date: thisEntryDate, complicationTemplate: tmpl)
+                entries.append(entry)
+                if entries.count == limit { break }
+            }
+            match = TennisMatch.sharedInstance().previousMatch(thisMatch)
+        }
+        handler(entries)
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, afterDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries after to the given date
-        handler(nil)
+        
+        var entries = [CLKComplicationTimelineEntry]()
+        
+        var match: Match? = TennisMatch.sharedInstance().firstMatch()
+        while let thisMatch = match {
+            let thisEntryDate = timelineEntryDateForMatch(thisMatch)
+            if date.compare(thisEntryDate) == .OrderedAscending {
+                let tmpl = templateForMatch(thisMatch)
+                let entry = CLKComplicationTimelineEntry(date: thisEntryDate, complicationTemplate: tmpl)
+                entries.append(entry)
+                if entries.count == limit { break }
+            }
+            match = TennisMatch.sharedInstance().nextMatch(thisMatch)
+        }
+        handler(entries)
     }
     
     // MARK: - Update Scheduling
@@ -56,8 +90,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Placeholder Templates
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
-        
         let tmpl = CLKComplicationTemplateModularLargeStandardBody()
+        
         tmpl.headerImageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Tennis")!)
     
         tmpl.headerTextProvider = CLKSimpleTextProvider(text: "Match Schedule")
@@ -66,4 +100,27 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         handler(tmpl)
     }
     
+    //MARK: - Convenience
+    
+    private func templateForMatch(match: Match) -> CLKComplicationTemplate {
+        let tmpl = CLKComplicationTemplateModularLargeStandardBody()
+        
+        let tennisBall = UIImage(named: "Tennis")!
+        tmpl.headerImageProvider = CLKImageProvider(onePieceImage: tennisBall)
+        
+        tmpl.headerTextProvider = CLKTimeTextProvider(date: match.time)
+        tmpl.body1TextProvider = CLKSimpleTextProvider(text: "\(match.playerOne) vs \(match.playerTwo)")
+        
+        return tmpl
+    }
+    
+    private func timelineEntryDateForMatch(match: Match) -> NSDate {
+        if let previousMatch = TennisMatch.sharedInstance().previousMatch(match) {
+            return previousMatch.time.dateByAddingTimeInterval(MatchDuration)
+        } else {
+            
+            return match.time.dateByAddingTimeInterval(-6 * 60 * 60)
+    
+        }
+    }
 }
