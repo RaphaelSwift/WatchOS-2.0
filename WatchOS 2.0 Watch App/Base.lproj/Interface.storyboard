@@ -40,8 +40,16 @@
                                 <segue destination="TE3-vV-xcw" kind="push" id="9PU-8I-QXL"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Sequence" id="OYq-3o-xfK"/>
-                        <button width="1" alignment="left" title="Coordination" id="7tk-Kp-ib6"/>
+                        <button width="1" alignment="left" title="Sequence" id="OYq-3o-xfK">
+                            <connections>
+                                <segue destination="LPq-kM-Ofz" kind="push" id="5Bc-BV-mun"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Coordination" id="7tk-Kp-ib6">
+                            <connections>
+                                <segue destination="cDX-35-dTE" kind="push" id="i0i-yz-kHO"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
@@ -59,7 +67,36 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="420" y="739"/>
+            <point key="canvasLocation" x="585" y="437"/>
+        </scene>
+        <!--Sequence Picker Interface Controller-->
+        <scene sceneID="lmt-jj-rvn">
+            <objects>
+                <controller hidesWhenLoading="NO" id="LPq-kM-Ofz" customClass="SequencePickerInterfaceController" customModule="WatchOS_2_0_Watch_App_Extension">
+                    <items>
+                        <picker width="125" height="125" alignment="center" verticalAlignment="center" style="sequence" id="P7d-wO-Fke"/>
+                    </items>
+                    <connections>
+                        <outlet property="sequencePicker" destination="P7d-wO-Fke" id="j8U-qC-tuo"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="420" y="720"/>
+        </scene>
+        <!--Coordination Picker Interface Controller-->
+        <scene sceneID="dY9-k3-c2G">
+            <objects>
+                <controller hidesWhenLoading="NO" id="cDX-35-dTE" customClass="CoordinationPickerInterfaceController" customModule="WatchOS_2_0_Watch_App_Extension">
+                    <items>
+                        <group width="125" height="125" alignment="center" verticalAlignment="center" id="mQT-8H-Kcx">
+                            <items>
+                                <picker width="0.5" height="0.5" alignment="center" verticalAlignment="center" id="DUI-sN-fhE"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="585" y="720"/>
         </scene>
         <!--List Picker Interface Controller-->
         <scene sceneID="hEX-f4-4jB">
@@ -79,7 +116,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="420" y="428"/>
+            <point key="canvasLocation" x="420" y="437"/>
         </scene>
         <!--Row Animation Interface Controller-->
         <scene sceneID="ySq-S0-rN3">
