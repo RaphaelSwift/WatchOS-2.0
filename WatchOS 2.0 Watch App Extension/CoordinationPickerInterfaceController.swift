@@ -12,11 +12,35 @@ import Foundation
 
 class CoordinationPickerInterfaceController: WKInterfaceController {
 
+    @IBOutlet var progressInterfaceGroup: WKInterfaceGroup!
+    @IBOutlet var coordinationPicker: WKInterfacePicker!
     
+    var pickerItems = [WKPickerItem]()
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
+        if let progressImages = UIImage.animatedImageNamed("RedCircle", duration: 0.0) {
+            progressInterfaceGroup.setBackgroundImage(progressImages)
+        }
+        
+        configurePicker()
+        
+        coordinationPicker.setCoordinatedAnimations([progressInterfaceGroup])
+        
     }
+    
+    func configurePicker() {
+        pickerItems.removeAll()
+        
+        for i in 0...100 {
+            let item = WKPickerItem()
+            item.title = "\(i) %"
+            pickerItems.append(item)
+        }
+        coordinationPicker.setItems(pickerItems)
+    }
+    
+
 }

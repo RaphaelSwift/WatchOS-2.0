@@ -90,10 +90,14 @@
                     <items>
                         <group width="125" height="125" alignment="center" verticalAlignment="center" id="mQT-8H-Kcx">
                             <items>
-                                <picker width="0.5" height="0.5" alignment="center" verticalAlignment="center" id="DUI-sN-fhE"/>
+                                <picker width="0.5" height="0.5" alignment="center" verticalAlignment="center" focusStyle="stack" id="DUI-sN-fhE"/>
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="coordinationPicker" destination="DUI-sN-fhE" id="Zwb-CN-LmO"/>
+                        <outlet property="progressInterfaceGroup" destination="mQT-8H-Kcx" id="WQB-ka-ZTW"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="585" y="720"/>
