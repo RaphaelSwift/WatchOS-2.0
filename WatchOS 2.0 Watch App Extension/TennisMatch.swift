@@ -15,9 +15,11 @@ class TennisMatch {
         
         var createdMatched = [Match]()
         for i in 0...10 {
-            createdMatched.append(Match(time: NSDate(timeIntervalSinceNow: Double(60 * 60 * i)), playerOne: randomPlayer(), playerTwo: randomPlayer(), index: i))
+            let playerOne = randomPlayer()
+            let playerTwo = randomPlayer()
+            let match = Match(time: NSDate(timeIntervalSinceNow: Double(60 * 60 * i)), playerOne: playerOne.0, playerOneInitials: playerOne.1, playerTwo: playerTwo.0, playerTwoIntials: playerTwo.1, index: i)
+            createdMatched.append(match)
         }
-        
         return createdMatched
     }
     
@@ -43,18 +45,18 @@ class TennisMatch {
         return nil
     }
     
-    func randomPlayer () -> String {
+    func randomPlayer () -> (String,String) {
         
         switch arc4random() % 8 {
-        case 0: return ("Federer")
-        case 1: return ("Wawrinka")
-        case 2: return ("Djokovic")
-        case 3: return ("Nadal")
-        case 4: return ("Murray")
-        case 5: return ("Berdych")
-        case 6: return ("Nishikori")
-        case 7: return ("Ferrer")
-        default: return ("Gasquet")
+        case 0: return ("Federer","RF")
+        case 1: return ("Wawrinka","SW")
+        case 2: return ("Djokovic","ND")
+        case 3: return ("Nadal","RN")
+        case 4: return ("Murray","AM")
+        case 5: return ("Berdych","TB")
+        case 6: return ("Nishikori","KN")
+        case 7: return ("Ferrer","DF")
+        default: return ("Gasquet","RG")
         }
     }
     

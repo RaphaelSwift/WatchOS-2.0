@@ -11,6 +11,8 @@ import Foundation
 struct Match {
     var time: NSDate
     var playerOne: String
+    var playerOneInitials: String
     var playerTwo: String
+    var playerTwoIntials: String
     var index: Int
 }

@@ -39,7 +39,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         getTimelineEntriesForComplication(complication, beforeDate: NSDate(), limit: 1) { (entries) -> Void in
             handler(entries?.first)
         }
-
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
@@ -51,7 +50,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         while let thisMatch = match {
             let thisEntryDate = timelineEntryDateForMatch(thisMatch)
             if date.compare(thisEntryDate) == .OrderedDescending {
-                let tmpl = templateForMatch(thisMatch)
+                let tmpl = templateForMatch(thisMatch, complication: complication)!
                 let entry = CLKComplicationTimelineEntry(date: thisEntryDate, complicationTemplate: tmpl)
                 entries.append(entry)
                 if entries.count == limit { break }
@@ -70,7 +69,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         while let thisMatch = match {
             let thisEntryDate = timelineEntryDateForMatch(thisMatch)
             if date.compare(thisEntryDate) == .OrderedAscending {
-                let tmpl = templateForMatch(thisMatch)
+                let tmpl = templateForMatch(thisMatch, complication: complication)!
                 let entry = CLKComplicationTimelineEntry(date: thisEntryDate, complicationTemplate: tmpl)
                 entries.append(entry)
                 if entries.count == limit { break }
@@ -90,28 +89,62 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Placeholder Templates
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
-        let tmpl = CLKComplicationTemplateModularLargeStandardBody()
         
-        tmpl.headerImageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Tennis")!)
-    
-        tmpl.headerTextProvider = CLKSimpleTextProvider(text: "Match Schedule")
-        tmpl.body1TextProvider = CLKSimpleTextProvider(text: "Player vs Player")
-        
-        handler(tmpl)
+        switch complication.family {
+            
+        case CLKComplicationFamily.ModularLarge:
+            let tmpl = CLKComplicationTemplateModularLargeStandardBody()
+            
+            tmpl.headerImageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Tennis")!)
+            
+            tmpl.headerTextProvider = CLKSimpleTextProvider(text: "Match Schedule")
+            tmpl.body1TextProvider = CLKSimpleTextProvider(text: "Player vs Player")
+            
+            handler(tmpl)
+            
+        case CLKComplicationFamily.ModularSmall:
+            let tmpl = CLKComplicationTemplateModularSmallColumnsText()
+            
+            tmpl.row1Column1TextProvider = CLKSimpleTextProvider(text: "RF")
+            tmpl.row2Column1TextProvider = CLKSimpleTextProvider(text: "ND")
+            tmpl.row1Column2TextProvider = CLKSimpleTextProvider(text: "0")
+            tmpl.row2Column2TextProvider = CLKSimpleTextProvider(text: "0")
+            
+            handler(tmpl)
+            
+        default: break
+        }
     }
     
     //MARK: - Convenience
     
-    private func templateForMatch(match: Match) -> CLKComplicationTemplate {
-        let tmpl = CLKComplicationTemplateModularLargeStandardBody()
+    private func templateForMatch(match: Match, complication: CLKComplication) -> CLKComplicationTemplate? {
         
-        let tennisBall = UIImage(named: "Tennis")!
-        tmpl.headerImageProvider = CLKImageProvider(onePieceImage: tennisBall)
-        
-        tmpl.headerTextProvider = CLKTimeTextProvider(date: match.time)
-        tmpl.body1TextProvider = CLKSimpleTextProvider(text: "\(match.playerOne) vs \(match.playerTwo)")
-        
-        return tmpl
+        switch complication.family {
+        case .ModularLarge:
+            let tmpl = CLKComplicationTemplateModularLargeStandardBody()
+            
+            let tennisBall = UIImage(named: "Tennis")!
+            tmpl.headerImageProvider = CLKImageProvider(onePieceImage: tennisBall)
+            
+            tmpl.headerTextProvider = CLKTimeTextProvider(date: match.time)
+            tmpl.body1TextProvider = CLKSimpleTextProvider(text: "\(match.playerOne) vs \(match.playerTwo)")
+            
+            return tmpl
+            
+        case .ModularSmall:
+            let tmpl = CLKComplicationTemplateModularSmallColumnsText()
+            
+            tmpl.row1Column1TextProvider = CLKSimpleTextProvider(text: match.playerOneInitials)
+            tmpl.row1Column2TextProvider = CLKSimpleTextProvider(text: "423")
+            tmpl.row2Column1TextProvider = CLKSimpleTextProvider(text: match.playerTwoIntials)
+            tmpl.row2Column2TextProvider = CLKSimpleTextProvider(text: "631")
+            
+            return tmpl
+            
+        default: break
+        }
+    return nil
     }
     
     private func timelineEntryDateForMatch(match: Match) -> NSDate {
