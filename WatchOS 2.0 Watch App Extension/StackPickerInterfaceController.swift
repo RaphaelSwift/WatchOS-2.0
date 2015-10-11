@@ -23,7 +23,6 @@ class StackPickerInterfaceController: WKInterfaceController {
         stackPicker.setHeight(0)
         
         configurePicker()
-        
     }
     
     override func didAppear() {
@@ -44,7 +43,6 @@ class StackPickerInterfaceController: WKInterfaceController {
         }
         stackPicker.setItems(pickerItems)
     }
-    
 }
 
 private extension UIImage {

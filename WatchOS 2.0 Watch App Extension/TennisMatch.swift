@@ -66,5 +66,4 @@ class TennisMatch {
         }
         return Singleton.sharedInstance
     }
-    
 }

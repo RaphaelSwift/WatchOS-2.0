@@ -28,7 +28,6 @@ class CoordinationPickerInterfaceController: WKInterfaceController {
         configurePicker()
         
         coordinationPicker.setCoordinatedAnimations([progressInterfaceGroup])
-        
     }
     
     func configurePicker() {
@@ -41,6 +40,4 @@ class CoordinationPickerInterfaceController: WKInterfaceController {
         }
         coordinationPicker.setItems(pickerItems)
     }
-    
-
 }
