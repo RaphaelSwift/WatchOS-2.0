@@ -7,19 +7,52 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var nameTextField: UITextField! {
+        didSet {
+            nameTextField.delegate = self
+        }
+    }
+    @IBOutlet weak var faceImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder() // dismiss keyboard
+        
+        if let textFieldContent = textField.text {
+            do {
+                try WikiFace.faceForPerson(textFieldContent, size: CGSize(width: 200, height: 200), completion: { (image: UIImage?, imageFound: Bool) -> () in
+                    if imageFound == true {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.faceImageView.image = image
+                            WikiFace.centerImageViewOnFace(self.faceImageView!)
+                        }
+                    }
+                })
+            }
+            catch WikiFace.WikiFaceError.CouldNotDownloadImage {
+                print("Could not access wikipedia for downloading an image")
+            }
+            catch {
+                print(error)
+            }
+        }
+        return true
+    }
+    
 }
+
 

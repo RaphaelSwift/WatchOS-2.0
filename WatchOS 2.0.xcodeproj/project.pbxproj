@@ -13,6 +13,7 @@
 		F60B80E61BBE6CAC0029FD56 /* CoordinationPickerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60B80E51BBE6CAC0029FD56 /* CoordinationPickerInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		F60B80E81BBEC0370029FD56 /* TennisMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60B80E71BBEC0370029FD56 /* TennisMatch.swift */; settings = {ASSET_TAGS = (); }; };
 		F60B80EA1BBED48B0029FD56 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60B80E91BBED48B0029FD56 /* Match.swift */; settings = {ASSET_TAGS = (); }; };
+		F63E70061BD4D3EA00EF3581 /* WikiFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E70051BD4D3EA00EF3581 /* WikiFace.swift */; settings = {ASSET_TAGS = (); }; };
 		F673DEA31BBBFE450083F358 /* AnimatedImageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F673DEA21BBBFE450083F358 /* AnimatedImageInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		F673DEA51BBC025E0083F358 /* AnimationPropertiesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F673DEA41BBC025E0083F358 /* AnimationPropertiesInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		F6863B791BB919DC00820EAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6863B781BB919DC00820EAB /* AppDelegate.swift */; };
@@ -102,6 +103,7 @@
 		F60B80E51BBE6CAC0029FD56 /* CoordinationPickerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinationPickerInterfaceController.swift; sourceTree = "<group>"; };
 		F60B80E71BBEC0370029FD56 /* TennisMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TennisMatch.swift; sourceTree = "<group>"; };
 		F60B80E91BBED48B0029FD56 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		F63E70051BD4D3EA00EF3581 /* WikiFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiFace.swift; sourceTree = "<group>"; };
 		F673DEA21BBBFE450083F358 /* AnimatedImageInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedImageInterfaceController.swift; sourceTree = "<group>"; };
 		F673DEA41BBC025E0083F358 /* AnimationPropertiesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationPropertiesInterfaceController.swift; sourceTree = "<group>"; };
 		F6863B751BB919DC00820EAB /* WatchOS 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchOS 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +200,7 @@
 			children = (
 				F6863B781BB919DC00820EAB /* AppDelegate.swift */,
 				F6863B7A1BB919DC00820EAB /* ViewController.swift */,
+				F63E70051BD4D3EA00EF3581 /* WikiFace.swift */,
 				F6863B7C1BB919DC00820EAB /* Main.storyboard */,
 				F6863B7F1BB919DC00820EAB /* Assets.xcassets */,
 				F6863B811BB919DC00820EAB /* LaunchScreen.storyboard */,
@@ -478,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6863B7B1BB919DC00820EAB /* ViewController.swift in Sources */,
+				F63E70061BD4D3EA00EF3581 /* WikiFace.swift in Sources */,
 				F6863B791BB919DC00820EAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

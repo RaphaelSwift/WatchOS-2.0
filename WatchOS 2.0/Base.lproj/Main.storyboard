@@ -1,25 +1,64 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="jpy-DP-bUI">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Smc-3a-iGb" customClass="ViewController" customModule="WatchOS_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="umY-v6-24k"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Ql-qF-RqG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="Klz-9a-C33">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIKIFACE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxs-fq-kRf">
+                                <rect key="frame" x="241" y="28" width="120" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLe-PK-lTf">
+                                <rect key="frame" x="20" y="98" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qcn-j8-tdf">
+                                <rect key="frame" x="200" y="175" width="200" height="250"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="1xN-Bx-hTT"/>
+                                    <constraint firstAttribute="width" constant="200" id="D7t-Fi-5Px"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qcn-j8-tdf" firstAttribute="centerX" secondItem="Klz-9a-C33" secondAttribute="centerX" id="3kB-lR-c1i"/>
+                            <constraint firstItem="lxs-fq-kRf" firstAttribute="centerX" secondItem="Klz-9a-C33" secondAttribute="centerX" id="C3h-x4-eOu"/>
+                            <constraint firstItem="cLe-PK-lTf" firstAttribute="top" secondItem="lxs-fq-kRf" secondAttribute="bottom" constant="37" id="JNh-IG-C6f"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="cLe-PK-lTf" secondAttribute="leading" id="NQj-nO-ZrH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cLe-PK-lTf" secondAttribute="trailing" id="YPW-1G-MlW"/>
+                            <constraint firstItem="Qcn-j8-tdf" firstAttribute="centerY" secondItem="Klz-9a-C33" secondAttribute="centerY" id="nni-C6-rem"/>
+                            <constraint firstItem="lxs-fq-kRf" firstAttribute="top" secondItem="umY-v6-24k" secondAttribute="bottom" constant="8" id="sZC-XP-lnh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="faceImageView" destination="Qcn-j8-tdf" id="d5A-4R-uhL"/>
+                        <outlet property="nameTextField" destination="cLe-PK-lTf" id="Z8n-8h-lhW"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KQn-Oj-Sw8" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
 </document>
