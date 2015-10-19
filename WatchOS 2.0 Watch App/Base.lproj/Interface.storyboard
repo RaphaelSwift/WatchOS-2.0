@@ -20,10 +20,31 @@
                                 <segue destination="KZ3-Y8-Nyg" kind="push" id="1YW-W8-2BM"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Application Context" id="ttc-fO-eFe">
+                            <connections>
+                                <segue destination="ND1-56-zAz" kind="push" id="avA-6K-Ytr"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-59" y="322"/>
+            <point key="canvasLocation" x="-194" y="214"/>
+        </scene>
+        <!--Application Context Interface Controller-->
+        <scene sceneID="KeS-dO-kTF">
+            <objects>
+                <controller hidesWhenLoading="NO" id="ND1-56-zAz" customClass="ApplicationContextInterfaceController" customModule="WatchOS_2_0_Watch_App_Extension">
+                    <items>
+                        <label alignment="center" text="PersonName" id="a0s-I1-RV4"/>
+                        <imageView height="120" alignment="center" verticalAlignment="center" contentMode="scaleAspectFit" id="nQK-1X-yo8"/>
+                    </items>
+                    <connections>
+                        <outlet property="faceImage" destination="nQK-1X-yo8" id="lnq-fa-f2F"/>
+                        <outlet property="personNameLabel" destination="a0s-I1-RV4" id="fCw-Ef-aic"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-194" y="601"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="k6B-sc-FDo">

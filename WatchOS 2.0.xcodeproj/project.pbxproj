@@ -14,6 +14,7 @@
 		F60B80E81BBEC0370029FD56 /* TennisMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60B80E71BBEC0370029FD56 /* TennisMatch.swift */; settings = {ASSET_TAGS = (); }; };
 		F60B80EA1BBED48B0029FD56 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60B80E91BBED48B0029FD56 /* Match.swift */; settings = {ASSET_TAGS = (); }; };
 		F63E70061BD4D3EA00EF3581 /* WikiFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E70051BD4D3EA00EF3581 /* WikiFace.swift */; settings = {ASSET_TAGS = (); }; };
+		F63E70081BD4DF3D00EF3581 /* ApplicationContextInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E70071BD4DF3D00EF3581 /* ApplicationContextInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		F673DEA31BBBFE450083F358 /* AnimatedImageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F673DEA21BBBFE450083F358 /* AnimatedImageInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		F673DEA51BBC025E0083F358 /* AnimationPropertiesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F673DEA41BBC025E0083F358 /* AnimationPropertiesInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		F6863B791BB919DC00820EAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6863B781BB919DC00820EAB /* AppDelegate.swift */; };
@@ -104,6 +105,7 @@
 		F60B80E71BBEC0370029FD56 /* TennisMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TennisMatch.swift; sourceTree = "<group>"; };
 		F60B80E91BBED48B0029FD56 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		F63E70051BD4D3EA00EF3581 /* WikiFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiFace.swift; sourceTree = "<group>"; };
+		F63E70071BD4DF3D00EF3581 /* ApplicationContextInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationContextInterfaceController.swift; sourceTree = "<group>"; };
 		F673DEA21BBBFE450083F358 /* AnimatedImageInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedImageInterfaceController.swift; sourceTree = "<group>"; };
 		F673DEA41BBC025E0083F358 /* AnimationPropertiesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationPropertiesInterfaceController.swift; sourceTree = "<group>"; };
 		F6863B751BB919DC00820EAB /* WatchOS 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchOS 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +245,7 @@
 				F6AA72511BBD32810026716D /* Picker */,
 				F6AA72501BBD327A0026716D /* Animation */,
 				F6863BBB1BB91A8200820EAB /* InterfaceController.swift */,
+				F63E70071BD4DF3D00EF3581 /* ApplicationContextInterfaceController.swift */,
 				F6863BBD1BB91A8200820EAB /* ExtensionDelegate.swift */,
 				F6863BBF1BB91A8200820EAB /* NotificationController.swift */,
 				F6863BC11BB91A8200820EAB /* GlanceController.swift */,
@@ -510,6 +513,7 @@
 				F6863BC01BB91A8200820EAB /* NotificationController.swift in Sources */,
 				F60B80E61BBE6CAC0029FD56 /* CoordinationPickerInterfaceController.swift in Sources */,
 				F6023A7D1BBA858A001153AF /* SequentialAnimationInterfaceController.swift in Sources */,
+				F63E70081BD4DF3D00EF3581 /* ApplicationContextInterfaceController.swift in Sources */,
 				F6863BBE1BB91A8200820EAB /* ExtensionDelegate.swift in Sources */,
 				F60B80E21BBD7A3A0029FD56 /* StackPickerInterfaceController.swift in Sources */,
 				F6863BC41BB91A8200820EAB /* ComplicationController.swift in Sources */,

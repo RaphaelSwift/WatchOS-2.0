@@ -18,7 +18,7 @@ class WikiFace: NSObject {
         case CouldNotDownloadImage
     }
     
-    class func faceForPerson (person: String, size: CGSize, completion: (image: UIImage?, imageFound: Bool) -> () )throws {
+    class func faceForPerson (person: String, size: CGSize, completion: (image: UIImage?,imageURL: String?, imageFound: Bool) -> () )throws {
         let escapedString = person.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
         
         let pixelsForAPIRequest = Int(max(size.width,size.height)) * 2
@@ -39,12 +39,12 @@ class WikiFace: NSObject {
                                 if let thumbURL = thumbnail.objectForKey("source") as? String {
                                     let faceImage = UIImage(data: NSData(contentsOfURL: NSURL(string: thumbURL)!)!)
                                         
-                                    completion(image: faceImage, imageFound: true)
+                                    completion(image: faceImage, imageURL: thumbURL, imageFound: true)
                                 }
 
                             }
                             else {
-                                completion(image: nil, imageFound: false)
+                                completion(image: nil, imageURL: nil, imageFound: false)
                                 }
                         }
                     }
